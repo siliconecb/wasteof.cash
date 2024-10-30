@@ -27,6 +27,5 @@
     min-height: 100vh;
     background-attachment: fixed;
     overflow: hidden;
-    touch-action: none;
   }
 </style>
