@@ -30,7 +30,7 @@
 		"express": "^4.21.0",
 		"gsap": "^3.12.5",
 		"node-fetch": "^3.3.2",
-		"pg": "^8.13.0",
+		"pg": "^8.13.1",
 		"svelte-sonner": "^0.3.28",
 		"tailwind-merge": "^2.5.2",
 		"tailwind-variants": "^0.2.1"
