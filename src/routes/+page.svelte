@@ -3,6 +3,7 @@
 
   import { onMount } from "svelte";
   import { gsap } from "gsap";
+  import Particles from "../lib/components/particles/Particles.svelte";
 
   let uhhcontent;
 
@@ -116,6 +117,7 @@
       </div>
     </div>
   </main>
+  <Particles />
 </div>
 
 <style>
@@ -186,4 +188,3 @@
     color: black;
   }
 </style>
-
