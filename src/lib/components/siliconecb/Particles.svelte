@@ -96,14 +96,14 @@
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: 9999;
+    z-index: 0;
   }
 
   :global(.particle) {
     position: absolute;
     width: 3px;
     height: 3px;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 50%;
   }
 </style>

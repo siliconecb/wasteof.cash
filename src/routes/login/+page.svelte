@@ -4,7 +4,7 @@
   import { fade } from "svelte/transition";
   import { onMount } from 'svelte';
   import { browser } from '$app/environment';
-  
+  import Stars from "../../lib/components/siliconecb/Particles.svelte";
 
   let username = "";
   let password = "";
@@ -104,7 +104,7 @@
     </a>
   </nav>
 
-  <main class="flex-grow flex items-center justify-center -mt-20 relative">
+  <main class="flex-grow flex items-center justify-center -mt-20 relative form">
     <form
       class="bg-white rounded-[2rem] w-80 h-[400px] relative flex flex-col items-center"
       on:submit|preventDefault={signmeinpls}
@@ -173,6 +173,7 @@
       </div>
     </form>
   </main>
+  <Stars />
 </div>
 
 <style>
@@ -180,4 +181,8 @@
     font-family: "__nohemi_164e0f";
     src: url("/static/media/_164e0f7e37680def92131715a86af08c.ttf");
   }
+  .form {
+    z-index: 99;
+  }
 </style>
+<!-- why the fuck doesn't tailwind z- work-->
