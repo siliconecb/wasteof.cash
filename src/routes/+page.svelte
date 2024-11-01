@@ -87,7 +87,7 @@
     </div>
   </nav>
 
-  <main class="flex-grow flex items-center justify-center">
+  <main class="flex-grow flex items-center justify-center zfix">
     <div
       class="text-center"
       style="transform: translateY(-15%);"
@@ -186,5 +186,9 @@
   .sign-in-button:hover {
     background-color: #ffffff;
     color: black;
+  }
+
+  .zfix {
+    z-index: 5;
   }
 </style>

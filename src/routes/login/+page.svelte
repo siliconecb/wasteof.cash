@@ -89,7 +89,7 @@
   <nav class="w-full pt-6 px-6 flex justify-between items-center">
     <a
       href="/"
-      class="flex items-center"
+      class="flex items-center z-6"
       data-sveltekit-preload-data="off"
       style="position: relative; z-index: 10;"
     >
@@ -104,7 +104,7 @@
     </a>
   </nav>
 
-  <main class="flex-grow flex items-center justify-center -mt-20 relative form">
+  <main class="flex-grow flex items-center justify-center -mt-20 relative zfix">
     <form
       class="bg-white rounded-[2rem] w-80 h-[400px] relative flex flex-col items-center"
       on:submit|preventDefault={signmeinpls}
@@ -181,8 +181,8 @@
     font-family: "__nohemi_164e0f";
     src: url("/static/media/_164e0f7e37680def92131715a86af08c.ttf");
   }
-  .form {
-    z-index: 99;
+  .zfix {
+    z-index: 5;
   }
 </style>
 <!-- why the fuck doesn't tailwind z- work-->
