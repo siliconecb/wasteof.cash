@@ -103,7 +103,7 @@
     position: absolute;
     width: 3px;
     height: 3px;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 50%;
   }
 </style>

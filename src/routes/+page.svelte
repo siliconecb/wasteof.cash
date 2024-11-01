@@ -76,7 +76,7 @@
           explore
         </span>
       </a>
-      <a href="/" class="mr-[45px]">
+      <a href="/about" class="mr-[45px]">
         <span
           style="font-family: '__nohemi_164e0f'; font-weight: 300;"
           class="text-[#EFE5E5] text-[16.5px]"

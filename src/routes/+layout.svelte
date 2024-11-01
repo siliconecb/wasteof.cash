@@ -5,7 +5,7 @@
   let background = '';
 
   afterNavigate(({ to }) => {
-    if (to?.url.pathname === '/login') {
+    if (to?.url.pathname === '/login' || to?.url.pathname === '/about') {
       background = 'linear-gradient(180deg, #659be1 0%, #dccfc5 100%)';
     } else if (to?.url.pathname === '/') {
       background = 'linear-gradient(180deg, #548cd6 24%, #e3c7b1 100%)';
