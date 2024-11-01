@@ -3,7 +3,7 @@
 
   import { onMount } from "svelte";
   import { gsap } from "gsap";
-  import Particles from "../lib/components/particles/Particles.svelte";
+  import Stars from "../lib/components/siliconecb/Particles.svelte";
 
   let uhhcontent;
 
@@ -117,7 +117,7 @@
       </div>
     </div>
   </main>
-  <Particles />
+  <Stars />
 </div>
 
 <style>
