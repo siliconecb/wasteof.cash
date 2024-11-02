@@ -25,29 +25,35 @@
     content="wasteof.cash - a supercharged alternative client for wasteof.money"
   />
 </sveltekit:head>
+<div style="background: linear-gradient(180deg, #659be1 0%, #dccfc5 100%)">
+  <div class="absolute pt-6 px-6">
+    <a href="/">
+      <img
+        src="/brand/nav-logo-bright.svg"
+        alt="wasteof.cash logo"
+        width="60"
+        height="30"
+        class="rounded"
+        style="border-radius: 6px"
+      />
+    </a>
+  </div>
+  <main class="flex items-center justify-center h-screen">
+    {#if $page.status === 404}
+      <img src="/img/misc/404.png" alt="NOT_FOUND" class="status" on:contextmenu|preventDefault/>
+    {/if}
 
-<div class="absolute pt-6 px-6">
-  <a href="/">
-    <img
-      src="/brand/nav-logo-bright.svg"
-      alt="wasteof.cash logo"
-      width="60"
-      height="30"
-      class="rounded"
-      style="border-radius: 6px"
-    />
-  </a>
+    {#if $page.status === 500}
+      <img src="/img/misc/500.png" alt="SERVER_ERROR" class="status" on:contextmenu|preventDefault/>
+    {/if}
+  </main>
 </div>
-<main class="flex items-center justify-center h-screen">
-  {#if $page.status === 404}
-    <img src="/img/misc/404.png" alt="404 Not Found" class="fourohfour" />
-  {/if}
-</main>
 
 <!-- tailwind no worky for scaling so normal css it is-->
 <style>
-  .fourohfour {
+  .status {
     width: 30%;
     height: auto;
   }
 </style>
+

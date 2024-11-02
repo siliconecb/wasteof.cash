@@ -8,7 +8,7 @@
     "pg:studio": "drizzle-kit studio",
     "lint": "rome check src/",
     "lint:fix": "rome check --apply src/",
-    "rome:format": "rome format src/ --write"
+    "lint:format": "rome format src/ --write"
   },
   "devDependencies": {
     "@sveltejs/adapter-node": "^5.2.9",

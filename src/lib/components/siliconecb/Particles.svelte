@@ -57,10 +57,10 @@
         cparticles++;
       }
 
-      frame(spawn);
+      requestAnimationFrame(spawn);
     }
 
-    frame(spawn);
+    requestAnimationFrame(spawn);
 
     document.addEventListener("amihereorno", () => {
       if (document.hidden) {
