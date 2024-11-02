@@ -86,7 +86,7 @@
   });
 </script>
 
-<div bind:this={particlesContainer} class="particles-container" />
+<div bind:this={particlesContainer} class="particles-container"></div>
 
 <style>
   .particles-container {
