@@ -62,7 +62,7 @@ the site will be open to select beta testers soon, stay tuned!
 > - [ ] (potential) feed de-clutterer with AI 👀
 
 # privacy
-wasteof.cash does not store wasteof.money credentials under any circumstances¹, read the <a href="https://cash.wasteof.me/privacy">privacy policy</a> for more details.
+wasteof.cash will never store wasteof.money credentials¹, read the <a href="https://cash.wasteof.me/privacy">privacy policy</a> for more details.
 
 > ¹wasteof.cash will only ever store user tokens temporarily ONLY when given express permission by the user to post to wasteof.money at a later date (post scheduling feature)
 
