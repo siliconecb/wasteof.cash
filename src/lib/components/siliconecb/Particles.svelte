@@ -1,45 +1,47 @@
+<!-- wtf it didn't even work -->
+ 
 <script>
   // @ts-nocheck
   import { onMount } from "svelte";
   import { gsap } from "gsap";
 
-  let particlesContainer;
-  let isActive = true;
+  let container;
+  let activeplz = true;
   let particles = [];
-  let lastParticleTime = 0;
-  const particleInterval = 100;
-  let particlesCreated = 0;
-  const fastParticlesCount = 20;
+  let last = 0;
+  const interval = 100;
+  let cparticles = 0;
+  const initial = 20;
 
   onMount(() => {
-    const viewportHeight = window.innerHeight;
-    const viewportWidth = window.innerWidth;
-    const endPoint = viewportHeight * 0.4;
+    const Hviewport = window.innerHeight;
+    const Wviewport = window.innerWidth;
+    const end = Hviewport * 0.4;
 
-    function createParticle(time) {
-      if (!isActive) return;
+    function spawn(time) {
+      if (!activeplz) return;
 
-      if (time - lastParticleTime >= particleInterval) {
+      if (time - last >= interval) {
         const particle = document.createElement("div");
         particle.classList.add("particle");
-        particlesContainer.appendChild(particle);
+        container.appendChild(particle);
 
-        const startY = viewportHeight + 10;
-        const baseDuration = Math.random() * 10 + 15;
+        const startY = Hviewport + 10;
+        const duration1 = Math.random() * 10 + 15;
         const duration =
-          particlesCreated < fastParticlesCount
-            ? baseDuration * 0.5
-            : baseDuration;
+          cparticles < initial
+            ? duration1 * 0.5
+            : duration1;
 
         const tween = gsap.fromTo(
           particle,
           {
-            x: Math.random() * viewportWidth,
+            x: Math.random() * Wviewport,
             y: startY,
             opacity: Math.random() * 0.4 + 0.1,
           },
           {
-            y: endPoint,
+            y: end,
             opacity: 0,
             duration: duration,
             ease: "none",
@@ -51,45 +53,45 @@
         );
 
         particles.push({ particle, tween, startY, duration });
-        lastParticleTime = time;
-        particlesCreated++;
+        last = time;
+        cparticles++;
       }
 
-      requestAnimationFrame(createParticle);
+      frame(spawn);
     }
 
-    requestAnimationFrame(createParticle);
+    frame(spawn);
 
-    document.addEventListener("visibilitychange", () => {
+    document.addEventListener("amihereorno", () => {
       if (document.hidden) {
-        isActive = false;
+        activeplz = false;
         particles.forEach((p) => p.tween.pause());
       } else {
-        isActive = true;
+        activeplz = true;
         const currentTime = performance.now();
         particles.forEach((p) => {
           const elapsed = p.tween.time();
-          const progress = elapsed / p.duration;
-          const currentY = p.startY + (endPoint - p.startY) * progress;
+          const p2 = elapsed / p.duration;
+          const currentY = p.startY + (end - p.startY) * p2;
 
           gsap.set(p.particle, { y: currentY });
           p.tween.resume();
         });
-        lastParticleTime = currentTime - particleInterval;
-        particlesCreated = 0;
+        last = currentTime - interval;
+        cparticles = 0;
       }
     });
 
     return () => {
-      isActive = false;
+      activeplz = false;
     };
   });
 </script>
 
-<div bind:this={particlesContainer} class="particles-container"></div>
+<div bind:this={container} class="container"></div>
 
 <style>
-  .particles-container {
+  .container {
     position: fixed;
     top: 0;
     left: 0;

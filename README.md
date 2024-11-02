@@ -37,6 +37,7 @@ client for wasteof.money with <ins>**superpowers.**</ins>
 
 - **SvelteKit** - the website
 - **Hono** - event/backend api
+- **Koa** - underlying web framework (prod server)
 - **Postgres** - stores information on features specific to wasteof.cash
 - **Drizzle ORM** - bridges the database and frontend
 
@@ -45,6 +46,7 @@ client for wasteof.money with <ins>**superpowers.**</ins>
 - TailwindCSS
 - Shadcn-svelte
 - GSAP
+- Rome (linting)
 
 ## beta testing
 the site will be open to select beta testers soon, stay tuned!
