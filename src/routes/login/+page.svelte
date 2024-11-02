@@ -4,7 +4,6 @@
   import { fade } from "svelte/transition";
   import { onMount } from 'svelte';
   import { browser } from '$app/environment';
-  import Stars from "../../lib/components/siliconecb/Particles.svelte";
 
   let username = "";
   let password = "";
@@ -173,7 +172,6 @@
       </div>
     </form>
   </main>
-  <Stars />
 </div>
 
 <style>

@@ -47,7 +47,7 @@
 <!-- tailwind no worky for scaling so normal css it is-->
 <style>
   .fourohfour {
-    width: 40%;
+    width: 30%;
     height: auto;
   }
 </style>

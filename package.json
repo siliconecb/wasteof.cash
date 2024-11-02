@@ -1,42 +1,42 @@
 {
-	"name": "wasteof.cash",
-	"version": "0.2.7",
-	"private": true,
-	"scripts": {
-		"generate": "drizzle-kit generate",
-		"migrate": "drizzle-kit push",
-		"studio": "drizzle-kit studio"
-	},
-	"devDependencies": {
-		"@sveltejs/adapter-node": "^5.2.9",
-		"@sveltejs/kit": "^2.7.3",
-		"@sveltejs/vite-plugin-svelte": "^4.0.0",
-		"@types/pg": "^8.11.10",
-		"autoprefixer": "^10.4.20",
-		"bits-ui": "^0.21.16",
-		"drizzle-kit": "^0.26.2",
-		"postcss": "^8.4.39",
-		"svelte": "^5.0.3",
-		"tailwindcss": "^3.4.14",
-		"typescript": "^5.6.3",
-		"vite": "^5.4.10"
-	},
-	"type": "module",
-	"dependencies": {
-		"boxicons": "^2.1.4",
-		"clsx": "^2.1.1",
-		"dotenv": "^16.4.5",
-		"drizzle-orm": "^0.35.3",
-		"express": "^4.21.0",
-		"gsap": "^3.12.5",
-		"node-fetch": "^3.3.2",
-		"pg": "^8.13.1",
-		"svelte-sonner": "^0.3.28",
-		"tailwind-merge": "^2.5.2",
-		"tailwind-variants": "^0.2.1"
-	},
-	"description": "a supercharged alternative client for wasteof.money",
-	"main": "server.js",
-	"author": "siliconeCB_",
-	"license": "ISC"
+  "name": "wasteof.cash",
+  "version": "0.2.7",
+  "private": true,
+  "scripts": {
+    "generate": "drizzle-kit generate",
+    "migrate": "drizzle-kit push",
+    "studio": "drizzle-kit studio"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-node": "^5.2.9",
+    "@sveltejs/kit": "^2.7.3",
+    "@sveltejs/vite-plugin-svelte": "^4.0.0",
+    "@types/pg": "^8.11.10",
+    "autoprefixer": "^10.4.20",
+    "bits-ui": "^0.21.16",
+    "drizzle-kit": "^0.26.2",
+    "postcss": "^8.4.39",
+    "svelte": "^5.0.3",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10"
+  },
+  "type": "module",
+  "dependencies": {
+    "boxicons": "^2.1.4",
+    "clsx": "^2.1.1",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.35.3",
+    "gsap": "^3.12.5",
+    "koa": "^2.15.3",
+    "node-fetch": "^3.3.2",
+    "pg": "^8.13.1",
+    "svelte-sonner": "^0.3.28",
+    "tailwind-merge": "^2.5.2",
+    "tailwind-variants": "^0.2.1"
+  },
+  "description": "a supercharged alternative client for wasteof.money",
+  "main": "server.js",
+  "author": "siliconeCB_",
+  "license": "ISC"
 }
