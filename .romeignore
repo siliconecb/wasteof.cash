@@ -3,3 +3,8 @@
 src/*
 !src/components
 !src/routes
+.github
+.svelte-kit
+build
+drizzle
+node_modules
