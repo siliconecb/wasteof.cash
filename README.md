@@ -76,8 +76,8 @@ open a pull request or just yell at me about bugs lol
 ```bash
 mv .env.template .env
 npm ci
-npm run generate
-npm run migrate
+npm run pg:generate
+npm run pg:migrate
 vite build
 vite dev --host
 ```
