@@ -6,9 +6,9 @@
     "generate": "drizzle-kit generate",
     "migrate": "drizzle-kit push",
     "studio": "drizzle-kit studio",
-	"lint": "rome check src/",
-	"lint:fix": "rome check --apply src/",
-  	"format": "rome format src/ --write"
+    "lint": "rome check src/",
+    "lint:fix": "rome check --apply src/",
+    "rome:format": "rome format src/ --write"
   },
   "devDependencies": {
     "@sveltejs/adapter-node": "^5.2.9",
