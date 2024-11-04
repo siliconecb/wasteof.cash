@@ -106,7 +106,7 @@
         wasteof.money with
         <span class="gradient-text-superpowers font-semibold">superpowers.</span
         ><br /><br />
-        "wasteof on roids" - @siliconecb_
+        "wasteof on roids" - @errplane
       </p>
       <div class="button-container mt-6">
         <a href="/login" data-sveltekit-preload-data="off">

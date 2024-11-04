@@ -39,13 +39,7 @@
     </a>
   </div>
   <main class="flex items-center justify-center h-screen">
-    {#if $page.status === 404}
-      <img src="/img/misc/404.png" alt="NOT_FOUND" class="status" on:contextmenu|preventDefault/>
-    {/if}
-
-    {#if $page.status === 500}
-      <img src="/img/misc/500.png" alt="SERVER_ERROR" class="status" on:contextmenu|preventDefault/>
-    {/if}
+    <img src="/img/misc/{$page.status}.png" alt="{formatErrorMessage($page.error?.message)}" class="status" on:contextmenu|preventDefault/>
   </main>
 </div>
 
