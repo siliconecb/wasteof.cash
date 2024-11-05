@@ -2,7 +2,7 @@
   "files": [
     "CONTRIBUTORS.md"
   ],
-  "imageSize": 50,
+  "imageSize": 80,
   "contributorsPerLine": 7,
   "contributorsSortAlphabetically": false,
   "skipCi": true,
