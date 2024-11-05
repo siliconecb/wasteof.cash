@@ -1,23 +1,10 @@
 {
-  "projectName": "wasteof.cash",
-  "projectOwner": "siliconecb"
   "files": [],
   "imageSize": 100,
   "contributorsPerLine": 7,
   "contributorsSortAlphabetically": false,
   "skipCi": true,
-  "contributors": [
-    {
-      "login": "errplanedev",
-      "name": "errplane",
-      "avatar_url": "https://avatars.githubusercontent.com/u/110797323?v=4",
-      "profile": "https://github.com/errplanedev",
-      "contributions": [
-        "ideas",
-        "test"
-      ]
-    }
-  ],
+  "contributors": [],
   "commitType": "docs",
   "commitConvention": "angular",
   "projectName": "wasteof.cash",
