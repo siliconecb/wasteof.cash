@@ -1,6 +1,6 @@
 {
-  "files": [],
-  "imageSize": 100,
+  "files": [README.md],
+  "imageSize": 50,
   "contributorsPerLine": 7,
   "contributorsSortAlphabetically": false,
   "skipCi": true,
