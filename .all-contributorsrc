@@ -1,5 +1,7 @@
 {
-  "files": [CONTRIBUTORS.md],
+  "files": [
+    "CONTRIBUTORS.md"
+  ],
   "imageSize": 50,
   "contributorsPerLine": 7,
   "contributorsSortAlphabetically": false,
