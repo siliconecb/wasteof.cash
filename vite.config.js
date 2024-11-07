@@ -3,19 +3,18 @@ import { defineConfig } from "vite";
 import fs from "fs";
 import path from "path";
 
-function sweepPlugin() {
+function sweep() {
   return {
-    name: "sweep-plugin",
+    name: "sweep-guy",
     closeBundle: () => {
-      const dir = path.resolve(".svelte-kit");
-      const sweep = (dir) => {
+      const sweepDir = (dir) => {
         const files = fs.readdirSync(dir);
         for (const file of files) {
           const filePath = path.join(dir, file);
           const stat = fs.statSync(filePath);
           if (stat.isDirectory()) {
-            sweep(filePath);
-          } else if (stat.isFile()) {
+            sweepDir(filePath);
+          } else if (stat.isFile() && filePath.endsWith(".js")) {
             let content = fs.readFileSync(filePath, "utf8");
             content = content.replace(
               /sveltekit:snapshot/g,
@@ -29,14 +28,35 @@ function sweepPlugin() {
           }
         }
       };
-      sweep(dir);
+      const svelteKitDir = path.resolve(".svelte-kit");
+      sweepDir(svelteKitDir);
+
+      const constantsFilePath = path.resolve(
+        "node_modules",
+        "@sveltejs",
+        "kit",
+        "src",
+        "runtime",
+        "client",
+        "constants.js"
+      );
+      if (fs.existsSync(constantsFilePath)) {
+        let content = fs.readFileSync(constantsFilePath, "utf8");
+        content = content.replace(
+          /sveltekit:snapshot/g,
+          "wasteofcash:snapshot"
+        );
+        content = content.replace(/sveltekit:scroll/g, "wasteofcash:scroll");
+        fs.writeFileSync(constantsFilePath, content, "utf8");
+      }
+
       console.log("sweeping complete! :)");
     },
   };
 }
 
 export default defineConfig({
-  plugins: [sveltekit(), sweepPlugin()],
+  plugins: [sveltekit(), sweep()],
   server: {
     fs: {
       allow: ["static"],
