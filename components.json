@@ -1,5 +1,5 @@
 {
-	"$schema": "https://shadcn-svelte.com/schema.json",
+	"$schema": "https://cdn.siliconecb.cc/f/womschema.json",
 	"style": "default",
 	"tailwind": {
 		"config": "tailwind.config.js",

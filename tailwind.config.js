@@ -30,7 +30,7 @@ const config = {
 				},
 				destructive: {
 					DEFAULT: "hsl(var(--destructive) / <alpha-value>)",
-					foreground: "hsl(var(--destructive-foreground) / <alpha-value>)"
+					foreground: "hsl(var(--destructiv-ground) / <alpha-value>)"
 				},
 				muted: {
 					DEFAULT: "hsl(var(--muted) / <alpha-value>)",

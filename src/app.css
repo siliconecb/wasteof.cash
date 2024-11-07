@@ -29,7 +29,7 @@
     --accent-foreground: 240 5.9% 10%;
  
     --destructive: 0 72.2% 50.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructiv-ground: 0 0% 98%;
  
     --ring: 240 10% 3.9%;
  
@@ -62,7 +62,7 @@
     --accent-foreground: 0 0% 98%;
  
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructiv-ground: 0 0% 98%;
  
     --ring: 240 4.9% 83.9%;
   }
