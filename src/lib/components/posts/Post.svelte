@@ -9,6 +9,7 @@
   export let time;
   export let content;
 
+  let tempfix = {id};
   let image = `https://api.wasteof.me/users/${username}/picture`;
   let timestamp = formatTime(time);
 

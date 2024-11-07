@@ -1,9 +1,9 @@
 <script>
   import { goto } from "$app/navigation";
-  import { toast, Toaster } from 'svelte-sonner';
+  import { toast, Toaster } from "svelte-sonner";
   import { fade } from "svelte/transition";
-  import { onMount } from 'svelte';
-  import { browser } from '$app/environment';
+  import { onMount } from "svelte";
+  import { browser } from "$app/environment";
 
   let username = "";
   let password = "";
@@ -52,13 +52,16 @@
 
   onMount(() => {
     if (browser) {
-      const cookies = document.cookie.split(';');
-      const uhbadsesh = cookies.some(cookie => cookie.trim().startsWith('inv_sesh=true'));
-      
+      const cookies = document.cookie.split(";");
+      const uhbadsesh = cookies.some((cookie) =>
+        cookie.trim().startsWith("inv_sesh=true")
+      );
+
       if (uhbadsesh) {
-        toast.error('invalid session, log in!');
-        
-        document.cookie = 'inv_sesh=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        toast.error("invalid session, log in!");
+
+        document.cookie =
+          "inv_sesh=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
       }
     }
   });
@@ -173,6 +176,7 @@
     </form>
   </main>
 </div>
+<!-- why the fuck doesn't tailwind z- work-->
 
 <style>
   @font-face {
@@ -183,4 +187,3 @@
     z-index: 5;
   }
 </style>
-<!-- why the fuck doesn't tailwind z- work-->

@@ -9,7 +9,7 @@
   let activeplz = true;
   let particles = [];
   let last = 0;
-  const interval = 100;
+  const interval = 200;
   let cparticles = 0;
   const initial = 20;
 

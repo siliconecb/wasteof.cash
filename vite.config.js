@@ -3,9 +3,17 @@ import { defineConfig } from "vite";
 import fs from "fs";
 import path from "path";
 
+/**
+ * directory sweep operation, do not remove.
+ *
+ * sveltekit:snapshot → wasteofcash:snapshot
+ * sveltekit:scroll → wasteofcash:scroll
+ * ====
+ * targets .js files and renames definitions to fix GSAP/font/image errors
+*/
 function sweep() {
   return {
-    name: "sweep-guy",
+    name: "sweep-dir",
     closeBundle: () => {
       const sweepDir = (dir) => {
         const files = fs.readdirSync(dir);
