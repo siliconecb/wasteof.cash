@@ -30,7 +30,7 @@
     "boxicons": "^2.1.4",
     "clsx": "^2.1.1",
     "dotenv": "^16.4.5",
-    "drizzle-orm": "^0.36.0",
+    "drizzle-orm": "^0.36.1",
     "gsap": "^3.12.5",
     "koa": "^2.15.3",
     "node-fetch": "^3.3.2",
