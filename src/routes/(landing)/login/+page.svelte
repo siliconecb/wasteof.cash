@@ -115,6 +115,7 @@
         src="/img/wombat.png"
         alt="wombat :)"
         class="absolute top-5 left-1/2 -translate-x-1/2 w-12 h-12 object-contain opacity-85"
+        on:contextmenu|preventDefault
       />
       <h2
         style="font-family: '__nohemi_164e0f'; font-weight: 500; font-size: 16px;"
@@ -158,6 +159,7 @@
         <button
           type="submit"
           class="w-full py-1 rounded-lg bg-[#1E1E1E] text-white focus:outline-none hover:bg-[#2A2A2A] transition-colors duration-200 mt-6"
+          on:contextmenu|preventDefault
           style="font-family: '__nohemi_164e0f'; font-weight: 400; font-size: 14px;"
         >
           Sign In

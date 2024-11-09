@@ -6,12 +6,14 @@ import { join } from "path";
 
 export async function GET() {
   try {
-    const commitInfo = execSync('git log -1 --format="%H%n%an%n%ct%n%T"')
+    const commitInfo = execSync('git log -1 --format="%H%n%ct%n%T"')
       .toString()
       .trim()
       .split("\n");
 
-    const [hash, author, timestamp, treeHash] = commitInfo;
+    const [hash, timestamp, treeHash] = commitInfo;
+
+    const author = "siliconecb_";
 
     const branch = execSync("git rev-parse --abbrev-ref HEAD")
       .toString()

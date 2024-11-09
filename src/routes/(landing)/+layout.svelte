@@ -2,7 +2,7 @@
   import Stars from "$lib/components/siliconecb/Particles.svelte";
 </script>
 
-<div class="stars-cont">
+<div class="stars-cont tmain">
   <slot></slot>
   <Stars />
 </div>
@@ -13,3 +13,4 @@
     min-height: 100vh;
   }
 </style>
+
