@@ -1,5 +1,5 @@
 <script>
-  import Stars from "$lib/components/siliconecb/Particles.svelte";
+  import Stars from "$lib/components/home/Particles.svelte";
 </script>
 
 <div class="stars-cont tmain">
