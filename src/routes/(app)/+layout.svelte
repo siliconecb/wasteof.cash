@@ -61,11 +61,12 @@
     aria-hidden="true"
     on:contextmenu|preventDefault
   ></div>
+  <slot /> <!-- actual page content, do not remove -->
 </div>
 
-<div class="bg-[#1F2124] min-h-screen relative">
+<div class="bg-[#1F2124] min-h-screen flex">
   <nav
-    class="w-full pt-8 px-14 flex flex-col justify-start items-start relative z-10"
+    class="w-64 pt-8 px-6 flex flex-col justify-start items-start relative z-10"
   >
     <a
       href="/"
@@ -81,24 +82,19 @@
       />
     </a>
     <Navbar />
-    <div class="absolute top-8 right-14">
-      <Avatar.Root class="w-9 h-9">
-        {#if avatarUrl}
-          <Avatar.Image src={avatarUrl} alt={`@${username}`} />
-        {:else}
-          <Avatar.Fallback>
-            <Skeleton
-              class="h-8 w-8 rounded-full bg-gray-500 dark:bg-gray-700"
-            />
-          </Avatar.Fallback>
-        {/if}
-      </Avatar.Root>
-    </div>
   </nav>
 
-  <main class="container mx-auto px-4 py-8">
-    <slot />
-  </main>
+  <div class="absolute top-8 right-14 z-10">
+    <Avatar.Root class="w-9 h-9">
+      {#if avatarUrl}
+        <Avatar.Image src={avatarUrl} alt={`@${username}`} />
+      {:else}
+        <Avatar.Fallback>
+          <Skeleton class="h-8 w-8 rounded-full bg-gray-500 dark:bg-gray-700" />
+        </Avatar.Fallback>
+      {/if}
+    </Avatar.Root>
+  </div>
 </div>
 
 <style>

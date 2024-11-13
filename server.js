@@ -49,7 +49,17 @@ app.use(async (ctx, next) => {
   }
 });
 
+// caching for images
 app.use(async (ctx, next) => {
+  if (ctx.path.endsWith('.jpg') || ctx.path.endsWith('.png') || ctx.path.endsWith('.gif') || ctx.path.endsWith('.jpeg') || ctx.path.endsWith('.bmp') || ctx.path.endsWith('.ico') || ctx.path.endsWith('.svg')) {
+    ctx.set('Cache-Control', 'public, max-age=31536000'); // cache for 1 year
+    ctx.set('Expires', new Date(Date.now() + 31536000000).toUTCString()); // cache for 1 year
+  }
+
+  await next();
+});
+
+app.use(async (ctx) => {
   ctx.set('Via', 'varnish (Varnish/7.6.0)');
   ctx.set('X-Powered-By', 'late nights and coffee');
   ctx.set('X-Made-With', '<3 from siliconecb_');
