@@ -37,7 +37,7 @@
     "pg": "^8.13.1",
     "svelte-sonner": "^0.3.28",
     "tailwind-merge": "^2.5.2",
-    "tailwind-variants": "^0.2.1"
+    "tailwind-variants": "^0.3.0"
   },
   "description": "a supercharged alternative client for wasteof.money",
   "main": "server.js",
