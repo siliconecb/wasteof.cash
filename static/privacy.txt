@@ -20,7 +20,7 @@ a) wasteof.money data:
 
 b) wasteof.cash data:
    - usernames
-   - ip addresses (for analytics purposes only)
+   - ip addresses (for analytics/security purposes only)
    - any data explicitly entered into the wasteof.cash site
 
 wasteof.cash does not store or collect ANY private data from wasteof.money, such as passwords or other sensitive information not listed above.

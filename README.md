@@ -44,7 +44,6 @@ client for wasteof.money with <ins>**superpowers.**</ins>
 ### more
 
 - TailwindCSS
-- Shadcn-svelte
 - GSAP
 - Rome (linting)
 

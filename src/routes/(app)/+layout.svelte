@@ -61,7 +61,11 @@
     aria-hidden="true"
     on:contextmenu|preventDefault
   ></div>
-  <slot /> <!-- actual page content, do not remove -->
+</div>
+
+<!-- actual page content, do not remove -->
+<div class="fixed inset-0 z-[0] overflow-y-auto overflow-x-hidden max-h-screen no-scrollbar">
+  <slot />
 </div>
 
 <div class="bg-[#1F2124] min-h-screen flex">
@@ -101,5 +105,10 @@
   @font-face {
     font-family: "__nohemi_164e0f";
     src: url("/static/media/_164e0f7e37680def92131715a86af08c.ttf");
+  }
+
+  @font-face {
+    font-family: "__onest_fe105d";
+    src: url("/static/media/_fe105de40a4cb40c1b8a6d237bd0a6cd.ttf");
   }
 </style>
