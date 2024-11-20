@@ -2,6 +2,7 @@
   // @ts-nocheck
   import * as Avatar from "$lib/components/ui/avatar";
   import { Skeleton } from "$lib/components/ui/skeleton/index.js";
+  import NumberFlow from '@number-flow/svelte'
   import {
     gettime,
     unescape,
@@ -36,7 +37,7 @@
   class="box shadow-[0_0_0_1.5px_rgba(29,29,29,1)] rounded-[21px] min-h-[130px] w-[520px] bg-[#27292C] relative p-4 transition-[box-shadow] duration-300 ease-in-out hover:shadow-[0_0_0_0.7px_var(--hover-border-color)]"
   style="--hover-border-color: {hexToRgba(tcolor, 0.5)};"
 >
-  <div class="flex items-center mb-2">
+  <div class="flex items-center mb-[12px]">
     <Avatar.Root class="w-8 h-8">
       <Avatar.Image src={avatarUrl} alt={`@${username}`} />
       <Avatar.Fallback>
@@ -64,5 +65,21 @@
   <div class="text-white break-words pl-2 -mt-1" 
     style="font-family: '__onest_fe105d'; font-size: 14px;" >
     {@html finalcontent}
+  </div>
+  <div class="mt-5 pl-2 flex items-center space-x-6">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DADADA" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="icn-heart">
+      <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DADADA" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="icn-repost">
+      <path d="m17 2 4 4-4 4"/>
+      <path d="M3 11v-1a4 4 0 0 1 4-4h14"/>
+      <path d="m7 22-4-4 4-4"/>
+      <path d="M21 13v1a4 4 0 0 1-4 4H3"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DADADA" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="icn-comment">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      <path d="M13 8H7"/>
+      <path d="M17 12H7"/>
+    </svg>
   </div>
 </div>

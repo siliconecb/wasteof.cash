@@ -30,6 +30,10 @@
           username = data.user.name;
           avatarUrl = `https://api.wasteof.me/users/${username}/picture`;
         } else {
+          console.error(
+            "you have an invalid token or there was an error fetching:",
+            error
+          );
           invalidtokensignout();
         }
       } catch (error) {
@@ -64,7 +68,9 @@
 </div>
 
 <!-- actual page content, do not remove -->
-<div class="fixed inset-0 z-[0] overflow-y-auto overflow-x-hidden max-h-screen no-scrollbar">
+<div
+  class="fixed inset-0 z-[0] overflow-y-auto overflow-x-hidden max-h-screen no-scrollbar"
+>
   <slot />
 </div>
 
@@ -102,6 +108,7 @@
 </div>
 
 <style>
+  /* fonts */
   @font-face {
     font-family: "__nohemi_164e0f";
     src: url("/static/media/_164e0f7e37680def92131715a86af08c.ttf");
