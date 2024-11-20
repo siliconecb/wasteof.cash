@@ -38,8 +38,8 @@
       />
     </a>
   </div>
-  <main class="flex items-center justify-center h-screen">
-    <img src="/img/misc/{$page.status}.png" alt="{formatErrorMessage($page.error?.message)}" class="status" on:contextmenu|preventDefault/>
+  <main class="flex items-center justify-center h-screen pointer-events-none">
+    <img src="/img/misc/{$page.status}.png" alt="{formatErrorMessage($page.error?.message)}" class="status pointer-events-none" on:contextmenu|preventDefault/>
   </main>
 </div>
 

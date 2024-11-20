@@ -111,4 +111,9 @@
     font-family: "__onest_fe105d";
     src: url("/static/media/_fe105de40a4cb40c1b8a6d237bd0a6cd.ttf");
   }
+
+  @font-face {
+    font-family: "__chivo_7c2c76";
+    src: url("/static/media/_7c2c76bb802fe775732c066e4206a720.ttf");
+  }
 </style>

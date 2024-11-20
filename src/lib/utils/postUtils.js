@@ -53,8 +53,9 @@ export function unescape(content) {
   );
 }
 
-export function realcontentstuff(text) {
+export function realcontentstuff(text, color) {
   const escaped = escape(text);
+  const highlight = hexToRgba(color, 0.3);
 
   return escaped
     .replace(
@@ -72,6 +73,10 @@ export function realcontentstuff(text) {
       '<span class="line-through">$1</span>'
     )
     .replace(/&lt;p&gt;(.*?)&lt;\/p&gt;/g, '<span class="block my-2">$1</span>')
+    .replace(
+      /&lt;mark&gt;(.*?)&lt;\/mark&gt;/g,
+      `<span style="background-color: ${highlight};">$1</span>`
+    )
     .replace(/&lt;img(.*?)&gt;/g, (match, attributes) => {
       const src = attributes.match(/src="([^"]*)"/);
       const alt = attributes.match(/alt="([^"]*)"/);
@@ -79,6 +84,28 @@ export function realcontentstuff(text) {
         alt ? alt[1] : ""
       }" class="max-w-full h-auto">`;
     })
+    .replace(
+      /&lt;blockquote&gt;(.*?)&lt;\/blockquote&gt;/gs,
+      '<div class="flex my-2">' +
+        '<div class="w-1 bg-[#737373] mr-3 flex-shrink-0"></div>' +
+        '<div class="flex-grow py-1 italic text-[#e8e8e8]">$1</div>' +
+        "</div>"
+    )
+    .replace(
+      /&lt;pre&gt;&lt;code&gt;([\s\S]*?)&lt;\/code&gt;&lt;\/pre&gt;/g,
+      (match, p1) => {
+        const codeContent = p1.replace(/\\n/g, "<br>");
+        return (
+          `<pre class="bg-[#1B1B1B] rounded-md p-4 my-2 overflow-x-auto">` +
+          `<code style="font-family: '__chivo_7c2c76', monospace;">${codeContent}</code>` +
+          `</pre>`
+        );
+      }
+    )
+    .replace(
+      /&lt;code&gt;(.*?)&lt;\/code&gt;/g,
+      '<span class="font-bold" style="font-family: \'__chivo_7c2c76\', monospace;">`$1`</span>'
+    )
     .replace(/&lt;ol&gt;.*?&lt;\/ol&gt;/gs, (match) => {
       const lis = match.match(/&lt;li&gt;(.*?)&lt;\/li&gt;/g);
       if (lis) {
@@ -127,7 +154,7 @@ export function tmapcolor(color) {
     indigo: "#7275FF",
     violet: "#8D57BC",
     purple: "#9330DC",
-    fuchsia: "#FF3BFF",
+    fuchsia: "#FF57E9",
     pink: "#FF7DFF",
     gray: "#9F9F9F",
   };
