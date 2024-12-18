@@ -42,6 +42,11 @@
     "tailwind-merge": "^2.5.2",
     "tailwind-variants": "^0.3.0"
   },
+  "overrides": {
+    "@melt-ui/svelte": {
+      "svelte": "^5.2.4"
+    }
+  },
   "description": "a supercharged alternative client for wasteof.money",
   "main": "server.js",
   "author": "siliconeCB_",

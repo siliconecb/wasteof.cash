@@ -1,4 +1,6 @@
 <script>
+  // @ts-nocheck
+
   import Compose from "$lib/components/app/Compose.svelte";
   import Post from "$lib/components/app/posts/Post.svelte";
 </script>

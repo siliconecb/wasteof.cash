@@ -78,4 +78,9 @@ export default defineConfig({
   ssr: {
     noExternal: ["@melt-ui/svelte", "bits-ui"],
   },
+  resolve: {
+    alias: {
+      'bits-ui': path.resolve(__dirname, 'node_modules/bits-ui/dist/index.js'),
+    },
+  },
 });
