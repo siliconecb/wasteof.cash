@@ -162,7 +162,7 @@ export function tmapcolor(color) {
   return colorMap[color] || "#000000";
 }
 
-// fuck me bro i forgot i had the borders in rgba not hex so im doing this instead of redoing it
+// i forgot i had the borders in rgba not hex so im doing this instead of redoing it
 export function hexToRgba(hex, alpha = 1) {
   const r = parseInt(hex.slice(1, 3), 16);
   const g = parseInt(hex.slice(3, 5), 16);
