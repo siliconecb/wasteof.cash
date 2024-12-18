@@ -10,7 +10,7 @@ import path from "path";
  * sveltekit:scroll → wasteofcash:scroll
  * ====
  * targets .js files and renames definitions to fix GSAP/font/image errors
-*/
+ */
 function sweep() {
   return {
     name: "sweep-dir",
@@ -79,8 +79,10 @@ export default defineConfig({
     noExternal: ["@melt-ui/svelte", "bits-ui"],
   },
   resolve: {
-    alias: {
-      'bits-ui': path.resolve(__dirname, 'node_modules/bits-ui/dist/index.js'),
-    },
+    "bits-ui": path.resolve(__dirname, "node_modules/bits-ui/dist/index.js"),
+    "@melt-ui/svelte": path.resolve(
+      __dirname,
+      "node_modules/@melt-ui/svelte/dist/index.js"
+    ),
   },
 });
