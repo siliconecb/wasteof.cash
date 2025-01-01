@@ -13,10 +13,13 @@
     <a href="https://cash.wasteof.me/login">sign in</a>
     ·
     <a href="https://wasteof-cash.wasteof.me">wasteof profile</a>
-  </p>
-  <br />
-  <br />
 </p>
+<p align="center">
+    <img src="https://img.shields.io/github/actions/workflow/status/siliconecb/wasteof.cash/node.js.yml?label=build" alt="workflow">
+</p>
+<br />
+</p>
+
   
 wasteof.cash is a spirited and cutting-edge alternative
 client for wasteof.money with <ins>**superpowers.**</ins>
