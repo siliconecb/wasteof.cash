@@ -75,9 +75,9 @@ export default defineConfig({
       external: ["node-fetch"],
     },
   },
-  ssr: {
-    noExternal: ["@melt-ui/svelte", "bits-ui"],
-  },
+  // ssr: {
+  //   noExternal: ["@melt-ui/svelte", "bits-ui"],
+  // },
   // resolve: {
   //   "bits-ui": path.resolve(__dirname, "node_modules/bits-ui/dist/index.js"),
   //   "@melt-ui/svelte": path.resolve(
