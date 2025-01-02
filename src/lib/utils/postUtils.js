@@ -43,13 +43,13 @@ export function timetooltip(time) {
 
   return `${month} ${day}, ${year} ${formattedHours}:${String(minutes).padStart(
     2,
-    "0"
+    "0",
   )} ${ampm} ${timez}`;
 }
 
 export function unescape(content) {
   return content.replace(/\\u[\dA-F]{4}/gi, (match) =>
-    String.fromCharCode(parseInt(match.replace(/\\u/g, ""), 16))
+    String.fromCharCode(parseInt(match.replace(/\\u/g, ""), 16)),
   );
 }
 
@@ -60,51 +60,47 @@ export function realcontentstuff(text, color) {
   return escaped
     .replace(
       /&lt;h2&gt;(.*?)&lt;\/h2&gt;/g,
-      '<span class="text-2xl font-[850] block my-2">$1</span>'
+      '<span class="text-2xl font-[850] block my-2">$1</span>',
     )
     .replace(
       /&lt;strong&gt;(.*?)&lt;\/strong&gt;/g,
-      '<span class="font-bold">$1</span>'
+      '<span class="font-bold">$1</span>',
     )
     .replace(/&lt;em&gt;(.*?)&lt;\/em&gt;/g, '<span class="italic">$1</span>')
     .replace(/&lt;u&gt;(.*?)&lt;\/u&gt;/g, '<span class="underline">$1</span>')
     .replace(
       /&lt;s&gt;(.*?)&lt;\/s&gt;/g,
-      '<span class="line-through">$1</span>'
+      '<span class="line-through">$1</span>',
     )
     .replace(/&lt;p&gt;(.*?)&lt;\/p&gt;/g, '<span class="block my-2">$1</span>')
     .replace(
       /&lt;mark&gt;(.*?)&lt;\/mark&gt;/g,
-      `<span style="background-color: ${highlight};">$1</span>`
+      `<span style="background-color: ${highlight};">$1</span>`,
     )
     .replace(/&lt;img(.*?)&gt;/g, (match, attributes) => {
       const src = attributes.match(/src="([^"]*)"/);
       const alt = attributes.match(/alt="([^"]*)"/);
-      return `<img src="${src ? src[1] : ""}" alt="${
-        alt ? alt[1] : ""
-      }" class="max-w-full h-auto">`;
+      return `<img src="${
+        src ? src[1] : ""
+      }" alt="${alt ? alt[1] : ""}" class="max-w-full h-auto">`;
     })
     .replace(
       /&lt;blockquote&gt;(.*?)&lt;\/blockquote&gt;/gs,
       '<div class="flex my-2">' +
         '<div class="w-1 bg-[#737373] mr-3 flex-shrink-0"></div>' +
         '<div class="flex-grow py-1 italic text-[#e8e8e8]">$1</div>' +
-        "</div>"
+        "</div>",
     )
     .replace(
       /&lt;pre&gt;&lt;code&gt;([\s\S]*?)&lt;\/code&gt;&lt;\/pre&gt;/g,
       (match, p1) => {
         const codeContent = p1.replace(/\\n/g, "<br>");
-        return (
-          `<pre class="bg-[#1B1B1B] rounded-md p-4 my-2 overflow-x-auto">` +
-          `<code style="font-family: '__chivo_7c2c76', monospace;">${codeContent}</code>` +
-          `</pre>`
-        );
-      }
+        return `<pre class="bg-[#1B1B1B] rounded-md p-4 my-2 overflow-x-auto"><code style="font-family: '__chivo_7c2c76', monospace;">${codeContent}</code></pre>`;
+      },
     )
     .replace(
       /&lt;code&gt;(.*?)&lt;\/code&gt;/g,
-      '<span class="font-bold" style="font-family: \'__chivo_7c2c76\', monospace;">`$1`</span>'
+      '<span class="font-bold" style="font-family: \'__chivo_7c2c76\', monospace;">`$1`</span>',
     )
     .replace(/&lt;ol&gt;.*?&lt;\/ol&gt;/gs, (match) => {
       const lis = match.match(/&lt;li&gt;(.*?)&lt;\/li&gt;/g);
@@ -115,7 +111,7 @@ export function realcontentstuff(text, color) {
               index + 1
             }. </span><span>${li
               .replace(/&lt;li&gt;/, "")
-              .replace(/&lt;\/li&gt;/, "")}</span></div>`
+              .replace(/&lt;\/li&gt;/, "")}</span></div>`,
         );
         return numberedList.join("");
       }
@@ -128,7 +124,7 @@ export function realcontentstuff(text, color) {
           (li) =>
             `<div class="flex items-center"><span class="mr-1 leading-none text-[#a8a8a8] user-select-none">•</span><span>${li
               .replace(/&lt;li&gt;/, "")
-              .replace(/&lt;\/li&gt;/, "")}</span></div>`
+              .replace(/&lt;\/li&gt;/, "")}</span></div>`,
         );
         return bulletList.join("");
       }
@@ -136,7 +132,7 @@ export function realcontentstuff(text, color) {
     })
     .replace(
       /&lt;li&gt;(.*?)&lt;\/li&gt;/g,
-      '<div class="flex items-center"><span class="mr-1 leading-none text-[#a8a8a8] user-select-none">•</span><span>$1</span></div>'
+      '<div class="flex items-center"><span class="mr-1 leading-none text-[#a8a8a8] user-select-none">•</span><span>$1</span></div>',
     )
     .replace(/\n/g, "<br>");
 }

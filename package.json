@@ -3,11 +3,12 @@
   "version": "0.2.7",
   "private": true,
   "scripts": {
+    "upgrade": "npm-check-updates -u",
     "pg:generate": "drizzle-kit generate",
     "pg:migrate": "drizzle-kit push",
     "pg:studio": "drizzle-kit studio",
     "lint": "rome check src/",
-    "lint:fix": "rome check --apply src/",
+    "lint:fix": "rome check --apply-unsafe src/",
     "lint:format": "rome format src/ --write"
   },
   "devDependencies": {
