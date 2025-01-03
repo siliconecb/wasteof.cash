@@ -63,7 +63,10 @@ the site will be open to select beta testers soon, stay tuned!
 - [ ] post bookmarks
 - [ ] extended explore page
 - [ ] post scheduling
-> - [ ] (potential) feed de-clutterer with AI 👀
+- [ ] truncate reposts
+- [ ] blacklist/block users
+- [ ] user/group DMs
+> - [ ] (potential) AI powered explore/search page 👀
 
 # privacy
 wasteof.cash will never store wasteof.money credentials¹, read the <a href="https://cash.wasteof.me/privacy">privacy policy</a> for more details.
