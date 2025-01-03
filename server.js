@@ -2,12 +2,18 @@ import { handler } from "./build/handler.js";
 import Koa from "koa";
 import dotenv from "dotenv";
 import { RateLimit } from "koa2-ratelimit";
+import { koaAnalytics } from 'node-api-analytics';
 
 dotenv.config();
 
 const app = new Koa();
 const port = process.env.PORT || 3000;
 const host = process.env.HOST || "0.0.0.0";
+const analyticsKey = process.env.THKEY || null;
+
+
+// api analytics
+app.use(koaAnalytics(analyticsKey));
 
 // response handling (for rate limits)
 const errmsg = (ctx) => {

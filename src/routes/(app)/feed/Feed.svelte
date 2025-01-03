@@ -20,7 +20,7 @@
         <Post
           username="supersecrettesting"
           time="1731593173636"
-          color="indigo"
+          color="gray"
           content="\u003Cp\u003Ehello world!\u003C/p\u003E"
         />
       </div>
