@@ -7,6 +7,7 @@ export async function POST({ request }) {
     return json({ error: "invalid intentions" }, 403);
   }
 
+  
   const { usr, pswd } = body;
   if (!usr || !pswd) {
     return json({ error: "username and password are required >:(" }, 401);
