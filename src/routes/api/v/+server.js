@@ -1,4 +1,5 @@
 // @ts-nocheck
+// TODO: FIX ON PROD
 import { json } from "@sveltejs/kit";
 import { execSync } from "child_process";
 import { readFileSync } from "fs";
