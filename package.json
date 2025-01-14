@@ -29,7 +29,7 @@
   "type": "module",
   "dependencies": {
     "@melt-ui/svelte": "^0.86.2",
-    "@number-flow/svelte": "^0.2.3",
+    "@number-flow/svelte": "^0.3.3",
     "boxicons": "^2.1.4",
     "clsx": "^2.1.1",
     "dotenv": "^16.4.7",
