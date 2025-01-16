@@ -1,0 +1,3 @@
+## wasteof.cash
+
+coming soon!
