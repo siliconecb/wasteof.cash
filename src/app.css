@@ -1,3 +1,21 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@layer base {
+	@font-face {
+		font-family: 'geist';
+        font-display: swap;
+		src: url(/static/media/fonts/_fb6da4a1827c74597e29f954b703b015.ttf) format('ttf');
+	}
+    @font-face {
+		font-family: 'sora';
+        font-display: swap;
+		src: url(/static/media/fonts/_66b18d93676517197641202e352191eb.ttf) format('truetype');
+	}
+    @font-face {
+        font-family: 'chivo';
+        font-display: swap;
+        src: url(/static/media/fonts/_7c2c76bb802fe775732c066e4206a720.ttf) format('truetype');
+    }
+}
