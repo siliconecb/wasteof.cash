@@ -10,9 +10,9 @@
 	import { onMount } from 'svelte';
 
 	export let patternSize = 260;
-	export let patternScaleX = 1.1;
-	export let patternScaleY = 1.1;
-	export let patternRefreshInterval = 7;
+	export let patternScaleX = 1.3;
+	export let patternScaleY = 1.3;
+	export let patternRefreshInterval = 8;
 	export let patternAlpha = 15;
 
 	let grainRef;

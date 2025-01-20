@@ -26,7 +26,7 @@
 			>
 		</div>
 		<div
-			class="absolute top-[36px] right-[61px] w-[248.1px] h-[54px] bg-[#1C1C1C] bg-opacity-40 rounded-[12px] flex items-center justify-end"
+			class="absolute top-[36px] right-[61px] w-[248px] h-[54px] bg-[#1C1C1C] bg-opacity-40 rounded-[12px] flex items-center justify-end"
 		>
 			<a
 				href="/login"
