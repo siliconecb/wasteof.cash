@@ -19,7 +19,7 @@ export async function authenticate(username: string, password: string) {
 
         if (data.token) {
             update(data.token);
-            await goto("/feed");
+            await goto("/app/feed");
         }
 
         return data;
