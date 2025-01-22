@@ -1,11 +1,11 @@
-FROM node:18 AS build
+FROM node:20 AS build
 WORKDIR /app
 COPY . /app
 RUN npm install -g vite
 RUN npm i
 RUN vite build
 
-FROM node:18-alpine
+FROM node:20-alpine
 WORKDIR /app
 COPY --from=build /app/package.json /app/package.json
 COPY --from=build /app/node_modules /app/node_modules
