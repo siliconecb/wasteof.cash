@@ -1,15 +1,10 @@
 import { writable } from 'svelte/store';
-import { browser } from '$app/environment';
 
 export const user = writable<string | null>(null);
 
-export async function vertoken(token: string) {
-	if (!browser) {
-		return false;
-	}
-
+export async function vertoken(token: string): Promise<boolean> {
 	try {
-		const response = await fetch('https://api.wasteof.money/session', {
+		const response = await fetch('https://api.wasteof.me/session', {
 			headers: {
 				Authorization: token
 			}
@@ -26,12 +21,10 @@ export async function vertoken(token: string) {
 	} catch (error) {
 		console.error('error verifying token:', error);
 		user.set(null);
-		if (typeof window !== 'undefined') {
-			window.location.href = '/login';
-		}
 		return false;
 	}
 }
+
 
 export function clearUser() {
 	user.set(null);

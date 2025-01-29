@@ -1,5 +1,10 @@
-<script>
+<script lang="ts">
 	import Particles from '$lib/components/app/Particles.svelte';
+
+    import { user } from '$lib/stores/user';
+    import { page } from '$app/stores';
+
+    $: $user = $page.data.user;
 </script>
 
 <main class="app">

@@ -1,20 +1,32 @@
 import { writable } from 'svelte/store';
+import { browser } from '$app/environment';
 import { vertoken } from './user';
 
-export const sessionToken = writable<string | null>(
-	typeof window !== 'undefined' ? localStorage.getItem('token') : null
-);
+function createSessionStore() {
+	const { subscribe, set } = writable<string | null>(null);
 
-sessionToken.subscribe((value) => {
-	if (typeof window !== 'undefined') {
-		if (value) {
-			localStorage.setItem('token', value);
-			vertoken(value);
-		} else {
-			localStorage.removeItem('token');
-		}
+	if (browser) {
+		const token = get('session');
+		if (token) set(token);
 	}
-});
+
+	return {
+		subscribe,
+		set: (value: string | null) => {
+			set(value);
+			if (browser) {
+				if (value) {
+					setCookie('session', value, 7);
+					vertoken(value);
+				} else {
+					deleteCookie('session');
+				}
+			}
+		}
+	};
+}
+
+export const sessionToken = createSessionStore();
 
 export function update(token: string | null) {
 	sessionToken.set(token);
@@ -26,7 +38,23 @@ export function clear() {
 
 export function badtoken() {
 	clear();
-	if (typeof window !== 'undefined') {
+	if (browser) {
 		window.location.href = '/login';
 	}
+}
+
+function setCookie(name: string, value: string, days: number) {
+	const expires = new Date(Date.now() + days * 864e5).toUTCString();
+	document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/; SameSite=Strict; Secure`;
+}
+
+function get(name: string): string | null {
+	const value = `; ${document.cookie}`;
+	const parts = value.split(`; ${name}=`);
+	if (parts.length === 2) return decodeURIComponent(parts.pop()!.split(';').shift()!);
+	return null;
+}
+
+function deleteCookie(name: string) {
+	document.cookie = `${name}=; Max-Age=0; path=/; SameSite=Strict; Secure`;
 }
