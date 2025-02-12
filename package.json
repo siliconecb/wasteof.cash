@@ -18,7 +18,7 @@
 		"@sveltejs/vite-plugin-svelte": "^4.0.0",
 		"autoprefixer": "^10.4.20",
 		"glob": "^11.0.1",
-		"prettier": "^3.3.2",
+		"prettier": "^3.5.0",
 		"prettier-plugin-svelte": "^3.2.6",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
